@@ -39,7 +39,16 @@ export function getMovieList(title, isNew) {
                     });
                 }
 
-            })
+            }).catch(function (error) {
+                if (error.response) {
+                    if(error.response.data.Error === 'Request limit reached!'){
+                        alert(error.response.data.Error + '\n\nPlease check your API, maybe it\'s down or there is some other problem')
+                    } else {
+                        alert(error.response.data.Error)
+                    }
+                }
+            });
+
         }
     }
 }
