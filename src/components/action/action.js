@@ -10,8 +10,6 @@ export const UPDATE_POPUP = "UPDATE_POPUP";
 let page = 0;
 
 export function getMovieList(title, isNew) {
-    setTimeout(() => {
-    }, 5000);
     isNew ? page = 0 : page = page + 1;
     page = page + 1
     let limit = page;
